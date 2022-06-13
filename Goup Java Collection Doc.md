@@ -3,6 +3,32 @@
 ### The Collection Interface
 ### The Set Interface
 ### The List Interface
+<p>
+List是有序的Collection
+
+<b><h2>Iterator</h2></br>
+List類專用的 ListIterator。</br>
+一般的Iterator只能remove元素，ListIterator可以add()、set()、remove()
+<br>
+ListIteratoru也可以在游標向後或向前previous()
+
+<b><h2>Range-View Operation</h2></br>
+
+<p>
+    
+    //subList(int fromIndex, int toIndex)
+
+    //for (int i = fromIndex; i < toIndex; i++) {
+    ...
+    }
+<p>
+fromIndex - 截取元素的起始位置，包含该索引位置元素</br>
+toIndex - 截取元素的结束位置，不包含该索引位置元素</br>
+
+swap— 交換 a 中指定位置的元素List。</br>
+copy— 將源複製List到目標List。</br>
+sort—List使用合併排序算法對 a 進行排序，</br>
+</P>
 ### The Queue Interface
 ### The Deque Interface
 ### The Map Interface
@@ -99,5 +125,10 @@ Averager averageCollect = roster.stream()
 ### Map Implementations
 ### Queue Implementations
 ### Deque Implementations
+
+<P>Deque是一個雙端隊列 Quene和Deque 實現了 stack和Quene<br/>
+Queue佇列有點像先進先出<br/>
+Dequey可以對尾端加入物件或取出物件<br/>
+</P>
 ### Wrapper Implementations
 ### Convenience Implementations
