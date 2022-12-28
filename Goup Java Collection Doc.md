@@ -2,6 +2,35 @@
 # Interfaces
 ### The Collection Interface
 ### The Set Interface
+
+<p>
+Set 集合物件不能放置重複物件。模擬數學上的抽象集合。</br>
+Set 加強了 equals(),hashCode()條件。（但是 source 上沒有很明顯展示這點?）</br>
+參考：
+<a href="https://stackoverflow.com/questions/12940663/does-adding-a-duplicate-value-to-a-hashset-hashmap-replace-the-previous-value">
+重複的值處理方式
+</a>
+</p>
+<p>
+HashSet, TreeSet, 和 LinkedHashSet 實作 Set 介面。</br>
+- HashSet 把元素放進 hash table ,效能很棒但不保證取出順序。</br>
+- TreeSet 把元素放在 RB Tree,排序會按照他們的值，但會稍慢於 HashSet。</br>
+- LinkedHashSet 實作於 hash table 並透過 linked list 遍歷其中，排列順需基本上就是插入時的順序，排序成本要稍高於 HashSet。
+</p>
+
+<p>
+簡易去除重複的方式：
+
+```
+// java 8 之前
+Collection<Type> noDups = new HashSet<Type>(c);
+
+// java 8 之後聚合操作。
+c.stream()
+.collect(Collectors.toSet()); // no duplicates
+```
+</p>
+
 ### The List Interface
 <p>
 List是有序的Collection
