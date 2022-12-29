@@ -5,7 +5,7 @@
 
 <p>
 Set 集合物件不能放置重複物件。模擬數學上的抽象集合。</br>
-Set 加強了 equals(),hashCode()條件。（但是 source 上沒有很明顯展示這點?）</br>
+Set 加強了 equals(),hashCode()條件。（//TODO 但是 source 上沒有很明顯展示這點?）</br>
 參考：
 <a href="https://stackoverflow.com/questions/12940663/does-adding-a-duplicate-value-to-a-hashset-hashmap-replace-the-previous-value">
 重複的值處理方式
@@ -30,6 +30,11 @@ c.stream()
 .collect(Collectors.toSet()); // no duplicates
 ```
 </p>
+
+##### Set Interface Basic Operations
+<p>基本操作</p>
+size(), isEmpty(), add()- return 值說明是否成功增加到Set中, remove(), Iterator()。
+<p>注意，儘量以介面型態去宣告變數而非實作型態，除了保持彈性(面對改變)之外，實作的方法有時不太能保證是否遵循標準</p>
 
 ### The List Interface
 <p>
