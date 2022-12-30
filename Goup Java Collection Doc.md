@@ -34,7 +34,14 @@ c.stream()
 ##### Set Interface Basic Operations
 <p>基本操作</p>
 size(), isEmpty(), add()- return 值說明是否成功增加到Set中, remove(), Iterator()。
-<p>注意，儘量以介面型態去宣告變數而非實作型態，除了保持彈性(面對改變)之外，實作的方法有時不太能保證是否遵循標準</p>
+<p>注意，儘量以介面型態去宣告變數而非實作型態，除了保持彈性(面對改變)之外，實作的方法有時不太能保證是否遵循標準。</p>
+
+##### Set Interface Bulk Operations
+
+- s1.containsAll(s2) — s1 中包含所有 s2 則為 true
+- s1.addAll(s2) — s1 會成為 s1,s2 的聯集
+- s1.retainAll(s2) — s1 會成為 s1,s2 的交集
+- s1.removeAll(s2) — s1 中，將不會有任何的 s2
 
 ### The List Interface
 <p>
