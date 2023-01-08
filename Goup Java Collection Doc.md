@@ -1,6 +1,38 @@
 # Goup Java Collection Doc
 # Interfaces
 ### The Collection Interface
+![](/images/colls-coreInterfaces.gif)
+<p>
+如圖所示，核心的幾個 interface 分兩個系列，Collection 跟 Map 。
+Map 不是 Collectcion 但是當中有許多應用 Colletction 的地方，像是 entrySet() , keySet() 都會傳回 Set。
+</p>
+<p>
+所有核心介面都是泛型(Generic)。
+所以當宣告實體時，比需給予一個型態(Type)。
+如下所示 
+
+```
+List<String> strList =  new ArrayList<String>(); 
+```
+
+如此讓編譯器可以在編譯時期協助防止錯誤操作，相關泛型(Generic)請參照 java tutorial 其他章節。
+</p>
+
+<p>
+為了核心介面管理方便，並未將介面獨立出來(特殊用途，如 immutable,固定大小,只能新增於後)。相反的，是可以讓實作類別可以選擇不支援，呼叫到不支援的會拋出 UnsupportedOperationException 。
+下面是幾個核心介面介紹：
+</p>
+
+- Collection : 根介面，裡面的操作都是最通用的，以達到最大的一般化。無論是有序、無序或可否包含重複的集合。沒有直接實作的類別。
+- Set : 不能有重複元素的集合。該介面模擬了數學集合抽象，並用於表示集合，例如由撲克牌組、學生課程表或主機上的行程(Process)。SortedSet是其排序版本。
+- List : 有序集合，可以包含重複元素。可以藉由index 存取元素。
+- Queue : 是一個處理過程中可以含有多個元素的集合。有自己特殊的存取操作。FIFO。
+- Deque : 基本定義同上。Double-ended queue , FIFO/LIFO。兩端點都可以進行存取移除等操作。
+- Map : key,value pair。key 不能重複。SortedMap是其排序版本。
+
+
+<hr>
+
 ### The Set Interface
 
 <p>
@@ -70,12 +102,19 @@ swap— 交換 a 中指定位置的元素List。</br>
 copy— 將源複製List到目標List。</br>
 sort—List使用合併排序算法對 a 進行排序，</br>
 </P>
+
 ### The Queue Interface
-### The Deque Interface
+//TODO
+###  The Deque Interface
+//TODO
 ### The Map Interface
+//TODO
 ### Object Ordering
+//TODO
 ### The SortedSet Interface
+//TODO
 ### The SortedMap Interface
+//TODO
 
 # Aggregate Operations
 <p> 
