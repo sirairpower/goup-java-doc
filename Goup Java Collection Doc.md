@@ -75,17 +75,60 @@ size(), isEmpty(), add()- return 值說明是否成功增加到Set中, remove(),
 - s1.retainAll(s2) — s1 會成為 s1,s2 的交集
 - s1.removeAll(s2) — s1 中，將不會有任何的 s2
 
+<hr>
+
 ### The List Interface
 <p>
-List是有序的Collection
+List是有序的Collection,可存在重複元素。包含操作如下列類型：
+</p>
 
-<b><h2>Iterator</h2></br>
+- Positional access : 基本上以 index 操作元素，如 get,set,add,addAll,remove。
+- Search : 會返回 index 的，包含 indexOf , lastIndexOf。
+- Iteration : 提供 Iterator 及增強型的 ListIterator 。
+- Range-view : sublist 。
+
+<p>
+Java 平台提供兩個一般會常用的 List 。ArrayList - 通常有較佳的性能表現。 LinkList - 某些情況下性能會比較好。
+</p>
+
+##### Collection Operations
+所有繼承自 Collection 介面的行為都如字面上所述，不熟悉的話就再去參閱 [Colleciton Interface](#the-collection-interface) 章節。
+- remove : 移除第一個相符的元素，
+- add,addAll : 無參數的 method ，會將元素(們)加到 List 最後。
+
+```
+// 結果 list1+list2
+list1.addAll(list2);
+
+// 結果 list3+list2 (list1 不受影響)
+List<Type> list3 = new ArrayList<Type>(list1);
+list3.addAll(list2);
+
+// java8 聚合操作
+List<String> list = people.stream()
+.map(Person::getName)
+.collect(Collectors.toList());
+```
+<p>
+如 Set 介面一樣，List 也加強對 equals,hashcode 的要求，所以兩個 list 物件可以邏輯比較其是否相同，而無視實作類型。兩個 List 物件要相同代表他們內含相同順序的元素。//TODO 可以實際寫例子。
+</p>
+
+##### Positional Access and Search Operations
+<p>
+set(),remove()都返回舊的值。</br>
+</p>
+
+##### Iterators
+##### Range-View Operation
+##### List Algorithms
+
+Iterator</br>
 List類專用的 ListIterator。</br>
 一般的Iterator只能remove元素，ListIterator可以add()、set()、remove()
-<br>
+</br>
 ListIteratoru也可以在游標向後或向前previous()
 
-<b><h2>Range-View Operation</h2></br>
+Range-View Operation</br>
 
 <p>
     
@@ -94,7 +137,7 @@ ListIteratoru也可以在游標向後或向前previous()
     //for (int i = fromIndex; i < toIndex; i++) {
     ...
     }
-<p>
+</p>
 fromIndex - 截取元素的起始位置，包含该索引位置元素</br>
 toIndex - 截取元素的结束位置，不包含该索引位置元素</br>
 
@@ -103,18 +146,31 @@ copy— 將源複製List到目標List。</br>
 sort—List使用合併排序算法對 a 進行排序，</br>
 </P>
 
+<hr>
+
 ### The Queue Interface
 //TODO
+<hr>
+
 ###  The Deque Interface
 //TODO
+<hr>
+
 ### The Map Interface
 //TODO
+<hr>
+
 ### Object Ordering
 //TODO
+<hr>
+
 ### The SortedSet Interface
 //TODO
+<hr>
+
 ### The SortedMap Interface
 //TODO
+<hr>
 
 # Aggregate Operations
 <p> 
@@ -210,5 +266,8 @@ Averager averageCollect = roster.stream()
 Queue佇列有點像先進先出<br/>
 Dequey可以對尾端加入物件或取出物件<br/>
 </P>
+
 ### Wrapper Implementations
 ### Convenience Implementations
+
+### Appendix. Lambda Expressions
